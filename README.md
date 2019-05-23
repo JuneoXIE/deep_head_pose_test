@@ -4,7 +4,8 @@ modify the codes deep_head_pose of the paper: Fine-Grained Head Pose Estimation 
 
 [论文笔记](https://blog.csdn.net/qq_42189368/article/details/84849638)  
 [代码链接](https://github.com/natanielruiz/deep-head-pose)  
-[pre-trained model：300W-LP, alpha 1, robust to image quality](https://drive.google.com/open?id=1m25PrSE7g9D2q2XJVMR6IA7RaCvWSzCR)
+[pre-trained model：300W-LP, alpha 1, robust to image quality](https://drive.google.com/open?id=1m25PrSE7g9D2q2XJVMR6IA7RaCvWSzCR)  
+
 1.引言：  
 本文提出了一种简洁和鲁棒的方式来确定姿态，通过训练一个multi-loss的卷积神经网络。
 直接使用RGB结合分类和回归损失来预测Euler angles（yaw，pitch and roll）。
