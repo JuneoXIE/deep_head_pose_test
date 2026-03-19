@@ -1,22 +1,23 @@
 # deep_head_pose_test
-modify the codes deep_head_pose of the paper: Fine-Grained Head Pose Estimation Without Keypoints
+Based on the paper: Fine-Grained Head Pose Estimation Without Keypoints
 
-
-[论文笔记](https://blog.csdn.net/qq_42189368/article/details/84849638)  
-[代码链接](https://github.com/natanielruiz/deep-head-pose)  
-[pre-trained model：300W-LP, alpha 1, robust to image quality](https://drive.google.com/open?id=1m25PrSE7g9D2q2XJVMR6IA7RaCvWSzCR)  
+- [论文笔记](https://blog.csdn.net/qq_42189368/article/details/84849638)
+- [代码链接](https://github.com/natanielruiz/deep-head-pose)
+- [pre-trained model：300W-LP, alpha 1, robust to image quality](https://drive.google.com/open?id=1m25PrSE7g9D2q2XJVMR6IA7RaCvWSzCR)  
 
 1.引言：  
 本文提出了一种简洁和鲁棒的方式来确定姿态，通过训练一个multi-loss的卷积神经网络。
 直接使用RGB结合分类和回归损失来预测Euler angles（yaw，pitch and roll）。
 
 2.网络结构：  
-![](https://ws1.sinaimg.cn/large/cdd040eely1g3b31srr0wj20qk0ao40b.jpg)  
+<img width="956" height="384" alt="image" src="https://github.com/user-attachments/assets/592a706d-0bf1-4614-bd35-723e9ff5e63f" />
+
 
 本文提出使用3个分离的losses，为每一个角度。每个loss由两部分组成：a binned pose classification and a regression component 组成。  
 
 最后为每一个欧拉角的损失为:  
-![](https://ws1.sinaimg.cn/large/cdd040eely1g3b321bj0kj20cr02lq35.jpg)  
+<img width="459" height="93" alt="image" src="https://github.com/user-attachments/assets/0d497bc3-9ea5-4567-87d8-27d9d6a7567c" />
+
 
 3.实现细节：  
 1） 对欧拉角（Yaw，Pitch，Roll）按角度区间进行分类，比如3度，那么Yaw：-90-+90，可以分成180/3= 60个类别，Pitch和Roll同Yaw角类似。这样就可以进行分类任务了。  
